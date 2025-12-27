@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="post-container">
+
+    <% if (!post) { %>
+        <h2>Post not found</h2>
+    <% } else { %>
+        <h1><%= post.title %></h1>
+        <p><%= post.content %></p>
+    <% } %>
+
+    <a href="/" class="back-link">← Back to Home</a>
+
+</div>
+
+</body>
+</html>

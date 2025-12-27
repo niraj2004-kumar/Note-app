@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New post</title>
+    <link rel="stylesheet" href="newpost.css">
+</head>
+<body>
+    <%const date=new Date()%>
+    <h5 id="date">Date: <%= new Date() %></h5>
+
+    <form action="/newpost" method="POST">
+
+        <label id="title">Title:</label>
+        <input
+            type="text"
+            name="Title"
+            placeholder="Title"
+            required
+        >
+
+        <br><br>
+
+      <center>
+          <textarea id="ta"
+            name="data"
+            rows="20"
+            cols="130"
+            placeholder="Write your post"
+            required
+        ></textarea>
+      </center>
+
+        <br><br>
+
+        <button type="submit">Save</button>
+
+    </form>
+
+   
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog posts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="main">
+    <center>
+    <h1 >Notes</h1>
+
+    <form action="/newpost" method="GET">
+        <button type="submit">Create a new post</button>
+    </form>
+</center>
+
+<% if (posts.length === 0) { %>
+
+    <center>
+        <h3>No posts yet</h3>
+    </center>
+
+<% } else { %>
+
+    <div id="posts">
+        <center>
+            <h1>Posts</h1>
+        </center>
+
+        <ol>
+            <% posts.forEach(post => { %>
+
+                <div id="post">
+<li>
+                    <div style="width:90vw; padding:15px; background-color:#FFFFFF; border-radius:5px;">
+                       <h3 id="title"> <strong><%= post.title %></strong></h3>
+                      <h6 class="post-content"><%= post.content %></h6>
+
+
+          <div class="post-actions">
+  <a href="<%= post.postRoute %>" class="read-more">Read More</a>
+
+  <form action="/posts/<%= post.id %>/delete" method="POST">
+    <button type="submit">Remove</button>
+  </form>
+</div>
+
+                    </div>
+                </li>
+
+                <br>
+                </div>
+
+            <% }) %>
+        </ol>
+    </div>
+
+<% } %>
+
+
+</div>
+</body>
+</html>
